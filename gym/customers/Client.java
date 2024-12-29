@@ -53,7 +53,7 @@ public class Client extends Person implements Member {
         StringBuilder a = new StringBuilder("[");
         for (String s: notifications) {
             a.append(s);
-            if(!s.equals(notifications.getLast())) {
+            if(!s.equals(notifications.get(notifications.size() - 1))) {
                 a.append(", ");
             }
         }

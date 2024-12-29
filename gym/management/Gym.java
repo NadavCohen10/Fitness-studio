@@ -179,8 +179,9 @@ public class Gym {
         System.out.println("\nSessions Data:");
         for (Session session : sessionsList) {
             System.out.print(session);
-            if (!session.equals(sessionsList.getLast()))
+            if (!session.equals(sessionsList.get(sessionsList.size()-1)))
                 System.out.println();
+            //sessionsList.size()-1
         }
         return "";
     }

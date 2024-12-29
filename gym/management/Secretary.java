@@ -2,6 +2,7 @@ package gym.management;
 
 import gym.Exception.*;
 import gym.customers.*;
+import gym.customers.Age;
 import gym.management.Sessions.*;
 
 import java.util.ArrayList;
@@ -44,10 +45,11 @@ public class Secretary extends Person {
     public Client registerClient(Person person) throws InvalidAgeException, DuplicateClientException {
         haveAccess();
         Client newClient = Client.newClient(person);
-        if (newClient.getAge() < 18) // Validate client's age
+        if (person.getAge() < 18) // Validate client's age
             throw new InvalidAgeException();
         if (gym.getClientsList().contains(person)) // Check for duplicate registration
             throw new DuplicateClientException();
+        //client newClient = Client.newClient(person);
         gym.addClient(newClient);
         gym.gymHistoryAdd("Registered new client: " + person.getName());
         return newClient;

@@ -73,7 +73,7 @@ public class Instructor extends Person {
         for (SessionType validSession : validSessions) {
             s = s + validSession.toString();
             // Check if the current session is the last one to avoid appending a comma.
-            if (!validSession.equals(validSessions.getLast()))
+            if (!validSession.equals(validSessions.get(validSessions.size() - 1)))
                 s = s + ", ";
         }
         return s;

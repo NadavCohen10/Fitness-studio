@@ -18,13 +18,17 @@ public class SessionFactory {
         if (sessionType == null)
             return null;
 
-        // Use a switch expression to return the appropriate session based on the sessionType
-        return switch (sessionType.toString()) {
-            case "Pilates" -> new Pilates();
-            case "Ninja" -> new Ninja();
-            case "MachinePilates" -> new MachinePilates();
-            case "ThaiBoxing" -> new ThaiBoxing();
-            default -> null;
-        };
+        switch (sessionType.toString()) {
+            case "Pilates":
+                return new Pilates();
+            case "Ninja":
+                return new Ninja();
+            case "MachinePilates":
+                return new MachinePilates();
+            case "ThaiBoxing":
+                return new ThaiBoxing();
+            default:
+                return null;
+        }
     }
 }
