@@ -49,7 +49,6 @@ public class Secretary extends Person {
             throw new InvalidAgeException();
         if (gym.getClientsList().contains(person)) // Check for duplicate registration
             throw new DuplicateClientException();
-        //client newClient = Client.newClient(person);
         gym.addClient(newClient);
         gym.gymHistoryAdd("Registered new client: " + person.getName());
         return newClient;
